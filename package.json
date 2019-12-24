@@ -1,0 +1,41 @@
+{
+  "name": "oauthlogin",
+  "version": "1.0.0",
+  "description": "basic oauth server",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "npm run build && npm run serve",
+    "serve": "node ./dist/server.js",
+    "build": "rm -rf dist/ && babel ./server --out-dir dist/ --ignore ./node_modules",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "dev": "node_modules/nodemon/bin/nodemon.js --exec babel-node server/server.js",
+    "linter": "./node_modules/eslint/bin/eslint.js './**/*.js'",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idmega2000/Oauthlogin.git"
+  },
+  "author": "idris kelani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idmega2000/Oauthlogin/issues"
+  },
+  "homepage": "https://github.com/idmega2000/Oauthlogin#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "babel-preset-env": "^1.7.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2"
+  }
+}
